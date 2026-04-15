@@ -26,6 +26,8 @@ DESTINATIONS = [
     "Royal Mansour, Marrakech", "Post Ranch Inn, Big Sur", "Villa d'Este, Lake Como"
 ]
 
+CONTACT_METHODS = ["Instagram", "WhatsApp", "Email", "Phone"]
+
 STATUSES = ['lead', 'proposal', 'planning', 'closed']
 
 def seed():
@@ -41,12 +43,11 @@ def seed():
         vibes = random.sample(VIBES, k=random.randint(1, 3))
         
         # Contact Methods & Preference
-        contact_opts = ["Instagram", "WhatsApp", "Email", "Phone"]
         possible_methods = {}
         
         if random.random() > 0.1:
             # Generate 1-3 methods with fake handles
-            selected_methods = random.sample(contact_opts, k=random.randint(1, 3))
+            selected_methods = random.sample(CONTACT_METHODS, k=random.randint(1, 3))
             for m in selected_methods:
                 if m == "Instagram":
                     possible_methods[m] = f"@{name.replace(' ', '').lower()}"
