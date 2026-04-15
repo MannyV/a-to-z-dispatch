@@ -79,7 +79,8 @@ def seed():
         res = supabase.table("clients").insert(client_data).execute()
         client_id = res.data[0]['id']
         print(f"Created {name} ({status})")
-        
+
+    print(f"\n✅ Seeding complete — {len(CLIENT_NAMES)} clients inserted.")
 
 
 if __name__ == "__main__":
