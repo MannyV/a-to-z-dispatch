@@ -1,7 +1,6 @@
 # Seed data preparation script
 import os
 import random
-import json
 from datetime import datetime, timedelta
 from supabase import create_client, Client
 from dotenv import load_dotenv
