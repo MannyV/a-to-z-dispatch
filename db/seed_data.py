@@ -29,7 +29,7 @@ DESTINATIONS = [
 STATUSES = ['lead', 'proposal', 'planning', 'closed']
 
 def seed():
-    print("Seeding 12 VIP Clients to the database...")
+    print(f"Seeding {len(CLIENT_NAMES)} VIP Clients to the database...")
 
     # 0. Cleanup
     print("Clearing existing data...")
@@ -75,8 +75,7 @@ def seed():
             "created_at": (datetime.now() - timedelta(days=random.randint(1, 30))).isoformat()
         }
         
-        res = supabase.table("clients").insert(client_data).execute()
-        client_id = res.data[0]['id']
+        supabase.table("clients").insert(client_data).execute()
         print(f"Created {name} ({status})")
 
     print(f"\n✅ Seeding complete — {len(CLIENT_NAMES)} clients inserted.")
