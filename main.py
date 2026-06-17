@@ -18,6 +18,7 @@ if not all([SUPABASE_URL, SUPABASE_KEY, TELEGRAM_TOKEN]):
 
 
 def main():
+    # Initialize services and print startup message
     print("Starting A-to-Z Dispatch MVP v1.0... Ready for dispatch! 🚀")
     
     # Initialize Supabase Client
