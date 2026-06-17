@@ -1,3 +1,6 @@
+"""
+Main entry point for the A-to-Z Dispatch application.
+"""
 import os
 import asyncio
 from dotenv import load_dotenv
